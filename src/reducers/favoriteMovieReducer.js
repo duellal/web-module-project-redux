@@ -13,6 +13,7 @@ const favoriteMovieReducer = (state = initialFavState, action) => {
             displayFavorites: !state.displayFavorites
          })
       case ADD_FAVORITE:
+         console.log(action.payload)
          return ({
             ...state,
             favorites: [...state.favorites, action.payload]
