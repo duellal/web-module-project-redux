@@ -21,7 +21,8 @@ const MovieHeader = (props) => {
 
 const mapStateToProps = state => {
     return ({
-        appTitle: state.appTitle
+        appTitle: state.movies.appTitle,
+        displayFavorites: state.favoriteMovies.displayFavorites
     })
 }
 export default connect(mapStateToProps)(MovieHeader);

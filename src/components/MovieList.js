@@ -32,8 +32,8 @@ const MovieList = (props) => {
 
 const mapStateToProps = state => {
     return ({
-        movies: state.movies
+        movies: state.movies.movies
     })
 }
 
-export default connect(mapStateToProps)(MovieList);
+export default connect(mapStateToProps, null)(MovieList);

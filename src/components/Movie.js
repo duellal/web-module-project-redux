@@ -56,8 +56,14 @@ const Movie = (props) => {
     </div>);
 }
 
+const mapStateToProps = state => {
+    return ({
+        displayFavorites: state.favoriteMovies.displayFavorites
+    })
+}
+
 const mapActionsToProps = {
     deleteMovie
 }
 
-export default connect(mapActionsToProps)(Movie);
+export default connect(mapStateToProps, mapActionsToProps)(Movie);
