@@ -11,7 +11,7 @@ import MovieHeader from './MovieHeader';
 import AddMovieForm from './AddMovieForm';
 import FavoriteMovieList from './FavoriteMovieList';
 
-const App = props => {
+const App = () => {
   const displayFavorites = true;
 
   return (
@@ -21,10 +21,10 @@ const App = props => {
       </nav>
 
       <div className="container">
-        <MovieHeader/>
+        <MovieHeader />
         <div className="row ">
-          {displayFavorites && <FavoriteMovieList/>}
-        
+          {displayFavorites && <FavoriteMovieList />}
+
           <Switch>
             <Route exact path="/movies/add">
               <AddMovieForm />
@@ -35,11 +35,11 @@ const App = props => {
             </Route>
 
             <Route path="/movies">
-              <MovieList/>
+              <MovieList />
             </Route>
 
             <Route path="/">
-              <Redirect to="/movies"/>
+              <Redirect to="/movies" />
             </Route>
           </Switch>
         </div>
