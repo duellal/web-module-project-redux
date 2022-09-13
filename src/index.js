@@ -8,7 +8,6 @@ import reducers from './reducers/index';
 import App from './components/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
-import { configure } from '@testing-library/react';
 
 const store = configureStore({ reducer: reducers })
 

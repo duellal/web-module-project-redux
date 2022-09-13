@@ -13,14 +13,31 @@ const favoriteMovieReducer = (state = initialFavState, action) => {
             displayFavorites: !state.displayFavorites
          })
       case ADD_FAVORITE:
-         console.log(action.payload)
-         return ({
-            ...state,
-            favorites: [...state.favorites, action.payload]
-         })
+         if (state.favorites.includes(action.payload)) {
+            return (state)
+         }
+         else {
+            return ({
+               ...state,
+               favorites: [...state.favorites, action.payload]
+            })
+         }
+      // return ({
+      //    ...state,
+      //    favorites: state.favorites.map(item => {
+      //       console.log(item)
+      //       if (item.id === action.payload.id) {
+      //          return [...state.favorites, action.payload]
+      //       }
+      //       else { return state }
+      //    })
+      // })
       case REMOVE_FAVORITE:
          return ({
-            ...state
+            ...state,
+            favorites: state.favorites.filter((item) => {
+               return action.payload !== item.id
+            })
          })
       default:
          return state

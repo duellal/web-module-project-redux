@@ -13,7 +13,6 @@ const Movie = (props) => {
     const movie = movies.find(movie => movie.id === Number(id));
 
     const handleDelete = (e) => {
-        console.log(movie)
         e.preventDefault()
         props.deleteMovie(movie.id)
         push('/movies')
@@ -21,7 +20,7 @@ const Movie = (props) => {
 
     const handleFav = (e) => {
         e.preventDefault()
-        props.addFavorite(movie.id)
+        props.addFavorite(movie)
         push('/movies')
     }
 
@@ -54,14 +53,14 @@ const Movie = (props) => {
                         </section>
 
                         <section>
-                            <span
+                            {props.displayFavorites != false && <span
                                 className='favorite'
                             >
                                 <input
                                     className="m-2 btn btn-dark"
                                     type='button'
                                     value='Favorite'
-                                    onClick={null} /></span>
+                                    onClick={handleFav} /></span>}
                             <span className="delete"><input type="button" className="m-2 btn btn-danger" value="Delete"
                                 onClick={handleDelete} /></span>
                         </section>
@@ -74,8 +73,8 @@ const Movie = (props) => {
 
 const mapStateToProps = state => {
     return ({
-        displayFavorites: state.favoriteMovies.displayFavorites,
-        movies: state.movies.movies
+        movies: state.movies.movies,
+        displayFavorites: state.favoriteMovies.displayFavorites
     })
 }
 
