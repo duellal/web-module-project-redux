@@ -4,8 +4,8 @@ import movieReducer from './movieReducer';
 import favoriteMovieReducer from './favoriteMovieReducer';
 
 const reducers = combineReducers({
-   movies: movieReducer,
-   favoriteMovies: favoriteMovieReducer
+   movieReducer: movieReducer,
+   favoriteMoviesReducer: favoriteMovieReducer
 })
 
 export default reducers;

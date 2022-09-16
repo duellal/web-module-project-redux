@@ -22,16 +22,6 @@ const favoriteMovieReducer = (state = initialFavState, action) => {
                favorites: [...state.favorites, action.payload]
             })
          }
-      // return ({
-      //    ...state,
-      //    favorites: state.favorites.map(item => {
-      //       console.log(item)
-      //       if (item.id === action.payload.id) {
-      //          return [...state.favorites, action.payload]
-      //       }
-      //       else { return state }
-      //    })
-      // })
       case REMOVE_FAVORITE:
          return ({
             ...state,

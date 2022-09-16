@@ -73,8 +73,8 @@ const Movie = (props) => {
 
 const mapStateToProps = state => {
     return ({
-        movies: state.movies.movies,
-        displayFavorites: state.favoriteMovies.displayFavorites
+        movies: state.movieReducer.movies,
+        displayFavorites: state.favoriteMoviesReducer.displayFavorites
     })
 }
 

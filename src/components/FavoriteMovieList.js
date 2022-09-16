@@ -30,7 +30,7 @@ const FavoriteMovieList = (props) => {
 
 const mapStateToProps = state => {
     return ({
-        favorites: state.favoriteMovies.favorites
+        favorites: state.favoriteMoviesReducer.favorites
     })
 }
 
